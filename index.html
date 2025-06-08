@@ -734,79 +734,414 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Sample products data
+        // Complete products database
         const products = [
+            // Smartphones
             {
                 id: 1,
+                name: "iPhone 15 Pro Max",
+                price: 1499990,
+                originalPrice: 1699990,
+                category: "smartphones",
+                discount: 12,
+                icon: "smartphone",
+                brand: "Apple",
+                description: "El iPhone más avanzado con chip A17 Pro y cámara de 48MP"
+            },
+            {
+                id: 2,
                 name: "iPhone 15 Pro",
                 price: 1299990,
                 originalPrice: 1499990,
                 category: "smartphones",
                 discount: 15,
-                icon: "smartphone"
-            },
-            {
-                id: 2,
-                name: "MacBook Air M2",
-                price: 1199990,
-                originalPrice: 1399990,
-                category: "laptops",
-                discount: 20,
-                icon: "laptop"
+                icon: "smartphone",
+                brand: "Apple",
+                description: "iPhone Pro con titanio y cámara profesional"
             },
             {
                 id: 3,
-                name: "AirPods Pro",
-                price: 249990,
-                originalPrice: 299990,
-                category: "audio",
-                discount: 25,
-                icon: "headphones"
+                name: "Samsung Galaxy S24 Ultra",
+                price: 1199990,
+                originalPrice: 1399990,
+                category: "smartphones",
+                discount: 20,
+                icon: "smartphone",
+                brand: "Samsung",
+                description: "Smartphone premium con S Pen y cámara de 200MP"
             },
             {
                 id: 4,
-                name: "PlayStation 5",
-                price: 599990,
-                originalPrice: 699990,
-                category: "gaming",
-                discount: 10,
-                icon: "gamepad-2"
-            },
-            {
-                id: 5,
                 name: "Samsung Galaxy S24",
                 price: 899990,
                 originalPrice: 1099990,
                 category: "smartphones",
                 discount: 30,
-                icon: "smartphone"
+                icon: "smartphone",
+                brand: "Samsung",
+                description: "Galaxy S24 con IA integrada y batería de larga duración"
+            },
+            {
+                id: 5,
+                name: "Google Pixel 8 Pro",
+                price: 799990,
+                originalPrice: 999990,
+                category: "smartphones",
+                discount: 25,
+                icon: "smartphone",
+                brand: "Google",
+                description: "Fotografía computacional avanzada con chip Tensor G3"
             },
             {
                 id: 6,
-                name: "Dell XPS 13",
+                name: "OnePlus 12",
+                price: 699990,
+                originalPrice: 899990,
+                category: "smartphones",
+                discount: 28,
+                icon: "smartphone",
+                brand: "OnePlus",
+                description: "Rendimiento flagship con carga rápida de 100W"
+            },
+
+            // Laptops
+            {
+                id: 7,
+                name: "MacBook Pro 16'' M3 Max",
+                price: 2499990,
+                originalPrice: 2799990,
+                category: "laptops",
+                discount: 12,
+                icon: "laptop",
+                brand: "Apple",
+                description: "La laptop más potente para profesionales creativos"
+            },
+            {
+                id: 8,
+                name: "MacBook Air M2",
+                price: 1199990,
+                originalPrice: 1399990,
+                category: "laptops",
+                discount: 20,
+                icon: "laptop",
+                brand: "Apple",
+                description: "Ultraportátil con chip M2 y diseño renovado"
+            },
+            {
+                id: 9,
+                name: "Dell XPS 13 Plus",
+                price: 1099990,
+                originalPrice: 1299990,
+                category: "laptops",
+                discount: 18,
+                icon: "laptop",
+                brand: "Dell",
+                description: "Ultrabook premium con pantalla OLED 4K"
+            },
+            {
+                id: 10,
+                name: "Lenovo ThinkPad X1 Carbon",
+                price: 1399990,
+                originalPrice: 1599990,
+                category: "laptops",
+                discount: 15,
+                icon: "laptop",
+                brand: "Lenovo",
+                description: "Laptop empresarial ultraliviana y resistente"
+            },
+            {
+                id: 11,
+                name: "ASUS ROG Strix G16",
+                price: 1299990,
+                originalPrice: 1499990,
+                category: "laptops",
+                discount: 16,
+                icon: "laptop",
+                brand: "ASUS",
+                description: "Gaming laptop con RTX 4070 y pantalla 165Hz"
+            },
+            {
+                id: 12,
+                name: "HP Spectre x360",
                 price: 999990,
                 originalPrice: 1199990,
                 category: "laptops",
-                discount: 15,
-                icon: "laptop"
+                discount: 20,
+                icon: "laptop",
+                brand: "HP",
+                description: "2-en-1 convertible con pantalla táctil OLED"
+            },
+
+            // Audio
+            {
+                id: 13,
+                name: "AirPods Pro 2",
+                price: 249990,
+                originalPrice: 299990,
+                category: "audio",
+                discount: 25,
+                icon: "headphones",
+                brand: "Apple",
+                description: "Auriculares con cancelación de ruido adaptativa"
             },
             {
-                id: 7,
-                name: "Echo Dot",
+                id: 14,
+                name: "Sony WH-1000XM5",
+                price: 329990,
+                originalPrice: 399990,
+                category: "audio",
+                discount: 22,
+                icon: "headphones",
+                brand: "Sony",
+                description: "Los mejores auriculares con cancelación de ruido"
+            },
+            {
+                id: 15,
+                name: "Bose QuietComfort Ultra",
+                price: 399990,
+                originalPrice: 449990,
+                category: "audio",
+                discount: 15,
+                icon: "headphones",
+                brand: "Bose",
+                description: "Audio espacial inmersivo y comodidad premium"
+            },
+            {
+                id: 16,
+                name: "Marshall Acton III",
+                price: 299990,
+                originalPrice: 349990,
+                category: "audio",
+                discount: 18,
+                icon: "speaker",
+                brand: "Marshall",
+                description: "Altavoz Bluetooth con sonido Marshall clásico"
+            },
+            {
+                id: 17,
+                name: "JBL Charge 5",
+                price: 149990,
+                originalPrice: 199990,
+                category: "audio",
+                discount: 30,
+                icon: "speaker",
+                brand: "JBL",
+                description: "Altavoz portátil resistente al agua con powerbank"
+            },
+            {
+                id: 18,
+                name: "Sennheiser HD 660S2",
+                price: 549990,
+                originalPrice: 649990,
+                category: "audio",
+                discount: 20,
+                icon: "headphones",
+                brand: "Sennheiser",
+                description: "Auriculares audiófilo de referencia abiertos"
+            },
+
+            // Gaming
+            {
+                id: 19,
+                name: "PlayStation 5 Slim",
+                price: 599990,
+                originalPrice: 699990,
+                category: "gaming",
+                discount: 10,
+                icon: "gamepad-2",
+                brand: "Sony",
+                description: "Consola next-gen más compacta con SSD ultrarrápido"
+            },
+            {
+                id: 20,
+                name: "Xbox Series X",
+                price: 549990,
+                originalPrice: 649990,
+                category: "gaming",
+                discount: 18,
+                icon: "gamepad-2",
+                brand: "Microsoft",
+                description: "La Xbox más potente con 4K nativo y 120fps"
+            },
+            {
+                id: 21,
+                name: "Nintendo Switch OLED",
+                price: 349990,
+                originalPrice: 399990,
+                category: "gaming",
+                discount: 15,
+                icon: "gamepad-2",
+                brand: "Nintendo",
+                description: "Consola híbrida con pantalla OLED vibrante"
+            },
+            {
+                id: 22,
+                name: "Steam Deck OLED",
+                price: 649990,
+                originalPrice: 749990,
+                category: "gaming",
+                discount: 16,
+                icon: "gamepad-2",
+                brand: "Valve",
+                description: "PC gaming portátil con pantalla OLED HDR"
+            },
+            {
+                id: 23,
+                name: "Razer DeathAdder V4",
+                price: 89990,
+                originalPrice: 119990,
+                category: "gaming",
+                discount: 35,
+                icon: "mouse",
+                brand: "Razer",
+                description: "Mouse gaming ergonómico con sensor de 30K DPI"
+            },
+            {
+                id: 24,
+                name: "Logitech G915 TKL",
+                price: 249990,
+                originalPrice: 299990,
+                category: "gaming",
+                discount: 20,
+                icon: "keyboard",
+                brand: "Logitech",
+                description: "Teclado mecánico inalámbrico ultra-delgado"
+            },
+
+            // Smart Home
+            {
+                id: 25,
+                name: "Amazon Echo Show 15",
+                price: 249990,
+                originalPrice: 299990,
+                category: "smart-home",
+                discount: 20,
+                icon: "monitor",
+                brand: "Amazon",
+                description: "Pantalla inteligente de 15'' para el hogar"
+            },
+            {
+                id: 26,
+                name: "Google Nest Hub Max",
+                price: 199990,
+                originalPrice: 249990,
+                category: "smart-home",
+                discount: 25,
+                icon: "monitor",
+                brand: "Google",
+                description: "Pantalla inteligente con cámara y Assistant"
+            },
+            {
+                id: 27,
+                name: "Echo Dot 5ta Gen",
                 price: 49990,
                 originalPrice: 79990,
                 category: "smart-home",
                 discount: 40,
-                icon: "home"
+                icon: "home",
+                brand: "Amazon",
+                description: "Altavoz inteligente compacto con Alexa"
             },
             {
-                id: 8,
-                name: "Nintendo Switch",
-                price: 299990,
-                originalPrice: 349990,
-                category: "gaming",
+                id: 28,
+                name: "Philips Hue Kit Inicio",
+                price: 149990,
+                originalPrice: 199990,
+                category: "smart-home",
+                discount: 30,
+                icon: "lightbulb",
+                brand: "Philips",
+                description: "Kit de iluminación inteligente con 16M colores"
+            },
+            {
+                id: 29,
+                name: "Ring Video Doorbell 4",
+                price: 199990,
+                originalPrice: 249990,
+                category: "smart-home",
+                discount: 25,
+                icon: "camera",
+                brand: "Ring",
+                description: "Timbre inteligente con video HD y detección de movimiento"
+            },
+            {
+                id: 30,
+                name: "Nest Thermostat",
+                price: 179990,
+                originalPrice: 229990,
+                category: "smart-home",
+                discount: 28,
+                icon: "thermometer",
+                brand: "Google",
+                description: "Termostato inteligente que aprende tus hábitos"
+            },
+
+            // Accessories
+            {
+                id: 31,
+                name: "Anker PowerCore 26800",
+                price: 79990,
+                originalPrice: 99990,
+                category: "accessories",
+                discount: 25,
+                icon: "battery",
+                brand: "Anker",
+                description: "Power bank de alta capacidad con carga rápida"
+            },
+            {
+                id: 32,
+                name: "Belkin MagSafe 3-en-1",
+                price: 149990,
+                originalPrice: 189990,
+                category: "accessories",
+                discount: 28,
+                icon: "zap",
+                brand: "Belkin",
+                description: "Cargador inalámbrico para iPhone, Apple Watch y AirPods"
+            },
+            {
+                id: 33,
+                name: "SanDisk Extreme Pro 1TB",
+                price: 149990,
+                originalPrice: 199990,
+                category: "accessories",
+                discount: 30,
+                icon: "hard-drive",
+                brand: "SanDisk",
+                description: "SSD externo ultrarrápido y resistente"
+            },
+            {
+                id: 34,
+                name: "Logitech MX Master 3S",
+                price: 99990,
+                originalPrice: 129990,
+                category: "accessories",
+                discount: 30,
+                icon: "mouse",
+                brand: "Logitech",
+                description: "Mouse inalámbrico premium para productividad"
+            },
+            {
+                id: 35,
+                name: "CalDigit TS4",
+                price: 399990,
+                originalPrice: 479990,
+                category: "accessories",
                 discount: 20,
-                icon: "gamepad-2"
+                icon: "usb",
+                brand: "CalDigit",
+                description: "Hub USB-C Thunderbolt 4 con 18 puertos"
+            },
+            {
+                id: 36,
+                name: "Elgato Stream Deck",
+                price: 149990,
+                originalPrice: 179990,
+                category: "accessories",
+                discount: 20,
+                icon: "grid-3x3",
+                brand: "Elgato",
+                description: "Controlador de streaming con 15 teclas LCD"
             }
         ];
 
@@ -878,28 +1213,369 @@
             alert(`¡Excelente! Has seleccionado ${product.name}. En una implementación real, aquí se abriría un formulario para hacer tu oferta especial.`);
         }
 
-        // User Authentication System
+        // User Authentication System with Enhanced JSON Storage
         class AuthManager {
             constructor() {
                 this.currentUser = null;
                 this.users = this.loadUsers();
-                this.checkLoggedInUser();
+                this.initializeAuth();
             }
 
-            // Load users from localStorage
+            // Load users from localStorage with default structure
             loadUsers() {
                 const usersData = localStorage.getItem('techstore_users');
-                return usersData ? JSON.parse(usersData) : [];
+                if (!usersData) {
+                    // Initialize with empty users array if none exists
+                    const initialData = {
+                        users: [],
+                        lastUserId: 0,
+                        createdAt: new Date().toISOString()
+                    };
+                    localStorage.setItem('techstore_users', JSON.stringify(initialData));
+                    return initialData;
+                }
+                return JSON.parse(usersData);
             }
 
-            // Save users to localStorage
+            // Save users to localStorage with complete structure
             saveUsers() {
-                localStorage.setItem('techstore_users', JSON.stringify(this.users));
+                const userData = {
+                    users: this.users.users,
+                    lastUserId: this.users.lastUserId,
+                    createdAt: this.users.createdAt,
+                    lastUpdated: new Date().toISOString()
+                };
+                localStorage.setItem('techstore_users', JSON.stringify(userData));
             }
 
-            // Save current session
+            // Save current session with expiration
             saveSession(user) {
-                localStorage.setItem('techstore_session', JSON.stringify(user));
+                const sessionData = {
+                    user: user,
+                    loginTime: new Date().toISOString(),
+                    expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
+                    isActive: true
+                };
+                localStorage.setItem('techstore_session', JSON.stringify(sessionData));
+            }
+
+            // Load and validate current session
+            loadSession() {
+                const sessionData = localStorage.getItem('techstore_session');
+                if (!sessionData) return null;
+                
+                try {
+                    const session = JSON.parse(sessionData);
+                    
+                    // Check if session is expired
+                    if (new Date() > new Date(session.expiresAt)) {
+                        this.clearSession();
+                        return null;
+                    }
+                    
+                    // Check if session is active
+                    if (!session.isActive) {
+                        this.clearSession();
+                        return null;
+                    }
+                    
+                    return session.user;
+                } catch (error) {
+                    this.clearSession();
+                    return null;
+                }
+            }
+
+            // Clear session completely
+            clearSession() {
+                localStorage.removeItem('techstore_session');
+            }
+
+            // Initialize authentication system
+            initializeAuth() {
+                const session = this.loadSession();
+                if (session) {
+                    // Verify user still exists in database
+                    const userExists = this.users.users.find(u => u.id === session.id);
+                    if (userExists) {
+                        this.currentUser = session;
+                        this.updateAuthButton();
+                        console.log(`👋 Bienvenido de vuelta, ${this.currentUser.name}!`);
+                    } else {
+                        // User was deleted, clear invalid session
+                        this.clearSession();
+                    }
+                } else {
+                    console.log('👤 No hay sesión activa');
+                }
+            }
+
+            // Enhanced password hashing
+            hashPassword(password) {
+                let hash = 0;
+                const salt = 'techstore_salt_2025';
+                const combined = password + salt;
+                
+                for (let i = 0; i < combined.length; i++) {
+                    const char = combined.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // Convert to 32bit integer
+                }
+                return Math.abs(hash).toString(16);
+            }
+
+            // Generate unique user ID
+            generateUserId() {
+                this.users.lastUserId += 1;
+                return this.users.lastUserId;
+            }
+
+            // Register new user with complete profile
+            register(name, email, password) {
+                // Check if user already exists
+                if (this.users.users.find(user => user.email.toLowerCase() === email.toLowerCase())) {
+                    throw new Error('Ya existe una cuenta con este email');
+                }
+
+                // Validate input
+                if (name.length < 2) {
+                    throw new Error('El nombre debe tener al menos 2 caracteres');
+                }
+
+                if (password.length < 6) {
+                    throw new Error('La contraseña debe tener al menos 6 caracteres');
+                }
+
+                // Create comprehensive user profile
+                const newUser = {
+                    id: this.generateUserId(),
+                    name: name.trim(),
+                    email: email.toLowerCase().trim(),
+                    password: this.hashPassword(password),
+                    profile: {
+                        firstName: name.split(' ')[0],
+                        lastName: name.split(' ').slice(1).join(' ') || '',
+                        avatar: null,
+                        phone: null,
+                        address: {
+                            street: null,
+                            city: null,
+                            region: null,
+                            country: 'Chile',
+                            zipCode: null
+                        }
+                    },
+                    preferences: {
+                        newsletter: true,
+                        notifications: true,
+                        currency: 'CLP',
+                        language: 'es'
+                    },
+                    activity: {
+                        createdAt: new Date().toISOString(),
+                        lastLogin: new Date().toISOString(),
+                        loginCount: 1,
+                        emailVerified: false
+                    },
+                    orders: [],
+                    cart: [],
+                    wishlist: [],
+                    reviews: []
+                };
+
+                // Add to users array
+                this.users.users.push(newUser);
+                this.saveUsers();
+
+                // Create session user (without sensitive data)
+                const sessionUser = this.createSessionUser(newUser);
+                this.currentUser = sessionUser;
+                this.saveSession(sessionUser);
+
+                console.log(`✅ Usuario registrado: ${newUser.name} (ID: ${newUser.id})`);
+                return sessionUser;
+            }
+
+            // Create safe user object for session (no password)
+            createSessionUser(user) {
+                return {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    firstName: user.profile.firstName,
+                    lastName: user.profile.lastName,
+                    loginTime: new Date().toISOString()
+                };
+            }
+
+            // Login user with enhanced validation
+            login(email, password) {
+                const user = this.users.users.find(u => 
+                    u.email.toLowerCase() === email.toLowerCase().trim()
+                );
+                
+                if (!user) {
+                    throw new Error('Email no encontrado');
+                }
+
+                if (user.password !== this.hashPassword(password)) {
+                    throw new Error('Contraseña incorrecta');
+                }
+
+                // Update user activity
+                user.activity.lastLogin = new Date().toISOString();
+                user.activity.loginCount += 1;
+                this.saveUsers();
+
+                // Create session
+                const sessionUser = this.createSessionUser(user);
+                this.currentUser = sessionUser;
+                this.saveSession(sessionUser);
+
+                console.log(`🎉 Login exitoso: ${user.name}`);
+                return sessionUser;
+            }
+
+            // Enhanced logout with session cleanup
+            logout() {
+                if (this.currentUser) {
+                    console.log(`👋 ${this.currentUser.name} ha cerrado sesión`);
+                    this.currentUser = null;
+                    this.clearSession();
+                    this.updateAuthButton();
+                    
+                    // Optional: Show logout confirmation
+                    setTimeout(() => {
+                        alert('Sesión cerrada correctamente. ¡Hasta pronto!');
+                    }, 100);
+                }
+            }
+
+            // Update auth button with enhanced user info
+            updateAuthButton() {
+                const authButton = document.getElementById('authButton');
+                const authButtonText = document.getElementById('authButtonText');
+                
+                if (this.currentUser) {
+                    const firstName = this.currentUser.firstName || this.currentUser.name.split(' ')[0];
+                    authButtonText.textContent = `Hola, ${firstName}`;
+                    authButton.onclick = () => this.showUserMenu();
+                    authButton.classList.add('logged-in');
+                } else {
+                    authButtonText.textContent = 'Iniciar Sesión';
+                    authButton.onclick = () => openAuthModal();
+                    authButton.classList.remove('logged-in');
+                }
+            }
+
+            // Enhanced user menu with more options
+            showUserMenu() {
+                const menu = `
+                    <div style="position: absolute; top: 100%; right: 0; background: white; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 1rem; min-width: 220px; z-index: 1000; border: 1px solid #e5e7eb;">
+                        <div style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; margin-bottom: 0.5rem;">
+                            <div style="font-weight: bold; color: #1f2937; margin-bottom: 2px;">${this.currentUser.name}</div>
+                            <div style="font-size: 0.8rem; color: #6b7280;">${this.currentUser.email}</div>
+                            <div style="font-size: 0.7rem; color: #9ca3af; margin-top: 2px;">ID: ${this.currentUser.id}</div>
+                        </div>
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 0; color: #374151; text-decoration: none; border-radius: 6px; padding-left: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">
+                            <span>👤</span> Mi Perfil
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 0; color: #374151; text-decoration: none; border-radius: 6px; padding-left: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">
+                            <span>📦</span> Mis Pedidos
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 0; color: #374151; text-decoration: none; border-radius: 6px; padding-left: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">
+                            <span>❤️</span> Lista de Deseos
+                        </a>
+                        <a href="#" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 0; color: #374151; text-decoration: none; border-radius: 6px; padding-left: 8px; transition: background 0.2s;" onmouseover="this.style.background='#f3f4f6'" onmouseout="this.style.background='transparent'">
+                            <span>⚙️</span> Configuración
+                        </a>
+                        <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #e5e7eb;">
+                        <a href="#" onclick="authManager.logout(); event.preventDefault();" style="display: flex; align-items: center; gap: 8px; padding: 0.5rem 0; color: #ef4444; text-decoration: none; border-radius: 6px; padding-left: 8px; transition: background 0.2s;" onmouseover="this.style.background='#fef2f2'" onmouseout="this.style.background='transparent'">
+                            <span>🚪</span> Cerrar Sesión
+                        </a>
+                    </div>
+                `;
+                
+                // Remove existing menu
+                const existingMenu = document.querySelector('.user-menu');
+                if (existingMenu) {
+                    existingMenu.remove();
+                    return;
+                }
+                
+                // Add menu
+                const menuDiv = document.createElement('div');
+                menuDiv.className = 'user-menu';
+                menuDiv.innerHTML = menu;
+                menuDiv.style.position = 'relative';
+                
+                const authButton = document.getElementById('authButton');
+                authButton.parentElement.style.position = 'relative';
+                authButton.parentElement.appendChild(menuDiv);
+                
+                // Close menu when clicking outside
+                setTimeout(() => {
+                    document.addEventListener('click', function closeMenu(e) {
+                        if (!menuDiv.contains(e.target) && !authButton.contains(e.target)) {
+                            menuDiv.remove();
+                            document.removeEventListener('click', closeMenu);
+                        }
+                    });
+                }, 100);
+            }
+
+            // Get all users data for admin/debug (without passwords)
+            getAllUsers() {
+                return {
+                    totalUsers: this.users.users.length,
+                    users: this.users.users.map(user => ({
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        createdAt: user.activity.createdAt,
+                        lastLogin: user.activity.lastLogin,
+                        loginCount: user.activity.loginCount,
+                        ordersCount: user.orders.length
+                    })),
+                    currentUser: this.currentUser,
+                    sessionActive: !!this.currentUser
+                };
+            }
+
+            // Get current user full profile (for authenticated user only)
+            getCurrentUserProfile() {
+                if (!this.currentUser) return null;
+                
+                const user = this.users.users.find(u => u.id === this.currentUser.id);
+                if (!user) return null;
+                
+                // Return profile without password
+                const { password, ...userProfile } = user;
+                return userProfile;
+            }
+
+            // Update user profile
+            updateUserProfile(updates) {
+                if (!this.currentUser) throw new Error('Usuario no autenticado');
+                
+                const userIndex = this.users.users.findIndex(u => u.id === this.currentUser.id);
+                if (userIndex === -1) throw new Error('Usuario no encontrado');
+                
+                // Update allowed fields
+                const allowedUpdates = ['name', 'profile', 'preferences'];
+                Object.keys(updates).forEach(key => {
+                    if (allowedUpdates.includes(key)) {
+                        this.users.users[userIndex][key] = { 
+                            ...this.users.users[userIndex][key], 
+                            ...updates[key] 
+                        };
+                    }
+                });
+                
+                this.saveUsers();
+                return this.getCurrentUserProfile();
+            }
+        }_session', JSON.stringify(user));
             }
 
             // Load current session
